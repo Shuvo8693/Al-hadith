@@ -5,8 +5,6 @@ import 'package:al_hadit_test/features/al_hadith/data/model/books_model.dart';
 import 'package:al_hadit_test/features/al_hadith/data/model/chapter_model.dart';
 import 'package:al_hadit_test/features/al_hadith/data/model/hadith_model.dart';
 import 'package:al_hadit_test/features/al_hadith/data/model/section_model.dart';
-import 'package:al_hadit_test/features/al_hadith/domain/entity/display_model.dart';
-import 'package:al_hadit_test/features/al_hadith/domain/entity/display_model_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
@@ -52,7 +50,6 @@ class LocalDataSource {
           chapterModelList: resultChapter,
           hadithModelList: resultHadith,
           sectionModelList: resultSection);
-      final displayModelMapper = await DisplayModelMapper.fromLocalSource(listOfLocalData);
 
       return Right(listOfLocalData);
     } catch (error) {
